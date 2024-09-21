@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 22:09:51 by hoskim            #+#    #+#             */
-/*   Updated: 2024/09/21 13:53:18 by hoskim           ###   ########.fr       */
+/*   Created: 2024/09/21 17:17:49 by hoskim            #+#    #+#             */
+/*   Updated: 2024/09/21 17:25:48 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *memset(void *pointer, int value, size_t number) {
-    
-    char *p;
-    size_t i;
+char *ft_strrchr(const char *s, int c)
+{
+	char ch =  (char)c;
+	const char *last_occur = NULL;
 
-    p = pointer;
-    i = 0;
-
-    while(i < number)
-        p[i++] = value;
-    return(pointer);
+	while(*s != '\0')
+	{
+		if (*s == ch)
+		{
+			last_occur = s;
+		}
+		s++;
+	}
+	if (*s == ch)
+	{
+		return (char *)s;
+	}
+	return((char *)last_occur));
 }
