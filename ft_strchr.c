@@ -14,7 +14,7 @@
 
 char *strchr(const char *s, int c)
 {
-	char ch =  (char)c;
+	char ch = (char)c;
 
 	while(*s != '\0')
 	{
