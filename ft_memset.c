@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-void *memset(void *pointer, int value, size_t number) {
+void *ft_memset(void *pointer, int value, size_t number)
+{
     
     char *p;
     size_t i;

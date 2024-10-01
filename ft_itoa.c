@@ -28,18 +28,18 @@ static int get_num_length(int n)
     return (length);
 
 }
- char *ft_itoa(int n)
- {
+char *ft_itoa(int n)
+{
     char *str;
     int len;
     long num;
 
     num = n;
     len = get_num_length(num);
-    str = (char *)malloc(sizeof(char)) * (len + 1));
+    str = (char *)malloc(sizeof(char) * (len + 1));
     if (!str)
     {
-        return (NULL);
+        return (NULL); 
     }
     str[len] = '\0';
 

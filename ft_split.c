@@ -31,6 +31,7 @@ static size_t ft_wordcount(char const *s, char c)
             count++;
         }
         while (*s && *s != c) // skips to the end of a word.
+        {
             s++;
         }
     }
@@ -50,7 +51,7 @@ char **ft_split(char const *s, char c)
         return (NULL);
     }
 
-    result = (char **)malloc((ft_wordcount(s, c)) + 1) * sizeof(char *));
+    result = (char **)malloc((ft_wordcount(s, c) + 1) * sizeof(char *));
 // why + 1? to add NULL at the end of the array.
     if (!result)
     {

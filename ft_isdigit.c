@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-int ft_isalpha(int c) {
+int ft_isdigit(int c)
+{
     if (49 <= c && c <= 57)
         return (1);
     retrun(0);

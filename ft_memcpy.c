@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void *memcpy(void *dest_str, const void *src_str, size_t n)
+void *ft_memcpy(void *dest_str, const void *src_str, size_t n)
 {
 	char *to_str;
 	const char *from_str;
