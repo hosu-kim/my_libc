@@ -14,21 +14,34 @@
 
 int ft_memcmp(const void *s1, const void *s2, size_t limit_bytes)
 {
-	unsigned char *ptr1;
-	unsigned char *ptr2;
+// compares two strings in the memory if finds a different characters,
+// substracts the values of str1[i] from str2[i]
+	unsigned char *str1;
+	unsigned char *str2;
 	size_t i;
 
-	ptr1 = (unsigned char *)s1;
-	ptr2 = (unsigned char *)s2;  
+	str1 = (const unsigned char *)s1;
+	str2 = (const unsigned char *)s2;  
 	i = 0;
 
 	while (i < limit_bytes)
 	{
-		if (ptr1[0] != ptr2[i])
+		if (str1[i] != str2[i])
 		{
-			return (ptr1[i] - ptr2[i]);
+			return (str1[i] - str2[i]);
 		}
 		i++;
 	}
 	return(0);
 }
+
+// int main()
+// {
+// 	char *string_1 = "When you were 'h'ere before.";
+// 	char *string_2 = "When you were 'H'ere before.";
+// 	int result;
+//
+// 	result = ft_memcmp(string_1, string_2, 26);
+// 	printf("%d", result); // h: 104 H: 72
+// 	return (0);
+// }

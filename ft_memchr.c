@@ -13,19 +13,39 @@
 #include "libft.h"
 
 void *ft_memchr(const void *s, int character, size_t limit_bytes)
-// scans the first occourence of a specific character.
+// scans the first occurence of a specific character.
+// returns the location of the character.
 {
 	const unsigned char *ptr = (const unsigned char *)s;
-	size_t count;
+	size_t increase;
 
-	count = 0;
-	while (count < limit_bytes)
+	increase = 0;
+	while (increase < limit_bytes)
 	{
-		if (ptr[count] == (unsigned char)character)
+		if (ptr[increase] == (unsigned char)character)
 		{
-			return (void *)(ptr + count);
+			return (void *)(ptr + increase);
 		}
-		count++;
+		increase++;
 	}
 	return (NULL);
 }
+
+// int main()
+// {
+// 	char *string = "Ugh, dead line is coming.";
+// 	char c;
+// 	char *result;
+//
+// 	c = 'l';
+// 	result = ft_memchr(string, c, 20);
+// 	if (result != NULL)
+//     {
+//         printf("Found character '%c' at position: %ld\n", c, result - string);
+//     }
+// 	else
+// 	{
+// 		printf("Nothing found.");
+// 	}
+// 	return (0);
+// }
