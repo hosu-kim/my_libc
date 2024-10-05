@@ -12,9 +12,13 @@
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
+// checks if the provided integer is an alphabet or number in ascii code.
+// True: 1, False: 0
 {
-    if ((65 <= c && c <= 90) || (97 <= c && c <= 122)) || (49 <= c && c <= 57))
-        return (1);
-    return(0);
+	if ((65 <= c && c <= 90) || (97 <= c && c <= 122) || (49 <= c && c <= 57))
+	{
+		return (1);
+	}
+	return (0);
 }

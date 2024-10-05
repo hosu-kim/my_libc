@@ -12,15 +12,17 @@
 
 #include <stdlib.h>
 
-void *ft_calloc(size_t num, size_t size)
+void	*ft_calloc(size_t elements, size_t bytes)
+// contiguous(touching) allocation
+// allocates memory with requested a number of elements and the size for each.
 {
-    char *ptr;
+	char	*ptr;
 
-    ptr = malloc(num * size);
-    if (!(ptr))
-    {
-        return (NULL);
-    }
-    ft_memset(ptr, 0, num * size);
-    return (ptr);
+	ptr = malloc(elements * bytes);
+	if (!(ptr))
+	{
+		return (NULL);
+	}
+	ft_memset(ptr, 0, elements * bytes);
+	return (ptr);
 }

@@ -12,20 +12,18 @@
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)// sets memory blocks to 0; old function.
+void	ft_bzero(void *s, size_t n)
+// sets memory blocks to 0; old function.
+// converts data type to char to handle by 1 byte.
+// Because void can't be modified.
 {
-	char *ptr;// converts data type to char to handle by 1 byte.
-	size_t i;// 'cuz void can't be modified.
+	char	*ptr;
+	size_t	i;
 
 	ptr = s;
 	i = 0;
-	while(i < n)
+	while (0 < n)
 	{
-		ptr[i++] = 0;
+		ptr[--n] = 0;
 	}
-}
-
-while(0 < n)
-{
-	ptr[--n] = 0;
 }

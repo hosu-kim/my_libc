@@ -12,9 +12,11 @@
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
+// checks if the provided integer is a number in ascii code.
+// True: 1, False: 0
 {
-    if (49 <= c && c <= 57)
-        return (1);
-    retrun(0);
+	if (49 <= c && c <= 57)
+		return (1);
+	retrun (0);
 }

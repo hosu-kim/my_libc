@@ -12,17 +12,20 @@
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void *ft_memchr(const void *s, int character, size_t limit_bytes)
+// scans the first occourence of a specific character.
 {
 	const unsigned char *ptr = (const unsigned char *)s;
-	size_t i;
+	size_t count;
 
-	while (i < n)
+	count = 0;
+	while (count < limit_bytes)
 	{
-		if (ptr[i] == (unsigned char)c)
+		if (ptr[count] == (unsigned char)character)
 		{
-			return ((void *)(ptr + i);
+			return (void *)(ptr + count);
 		}
+		count++;
 	}
 	return (NULL);
 }
