@@ -21,3 +21,8 @@ int ft_strlen(const char *s)
         i++;
     return(i);
 }
+
+int main()
+{
+    char *string = "I've been rim of the world"
+}
