@@ -6,23 +6,25 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 15:26:46 by hoskim            #+#    #+#             */
-/*   Updated: 2024/09/28 16:17:42 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/06 16:25:53 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+// sends each element to the provided function
+// and returns a char pointer.
 {
 	char *new_str;
 	unsigned int i;
 
-	if (!s || !f) // allocation failure on s or f
+	if (!s || !f)
 	{
 		return (NULL);
 	}
 	
-	new_str = (char *)malloc(sizeof(char) * (strlen(s) + 1));
+	new_str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!new_str)
 	{
 		return (NULL);
@@ -38,4 +40,13 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new_str[i] = '\0';
 
 	return (new_str);
+}
+
+
+int main()
+{
+	char *string = "unlock the code";
+	char *new_string;
+
+	new_string = ft_strmapi()
 }
