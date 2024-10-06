@@ -15,14 +15,13 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <string.h>
 
 typedef struct s_list // define the struct
 {
     void *content; // points to any type of data
     struct s_list *next;
 }   t_list; // define an alias
-
-void ft_bzero(void *s, size_t n);
 
 // Character checks and conversions
 int	ft_atoi(const char *str);
@@ -36,6 +35,7 @@ int ft_tolower(int c);
 int ft_toupper(int c);
 
 // Memory manipulation
+void ft_bzero(void *s, size_t n);
 void *ft_calloc(size_t num, size_t size);
 void *ft_memchr(const void *s, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);

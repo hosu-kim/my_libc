@@ -12,11 +12,13 @@
 
 #include "libft.h"
 
-char *strdup(const char *str)
+char *ft_strdup(const char *str)
 {
     char *dup;
-    int i;
+    int increase;
     int strlen;
+
+    increase = 0;
 
     if (!str)
     {
@@ -26,18 +28,29 @@ char *strdup(const char *str)
     strlen = (int)ft_strlen(str);
     dup = (char *)malloc(strlen + 1);
 
-    if (!(dup))
+    if (!dup)
     {
         return (NULL);
     }
-
-    i = 0;
     
-    while (str[i])
+    while (str[increase])
     {
-        dup[i] = str[i];
-        i++;
+        dup[increase] = str[increase];
+        increase++;
     }
-    dup[i] = '\0';
+    dup[increase] = '\0';
     return(dup);
 }
+
+// int main()
+// {
+//     char *source = "-Wall -Werror -Wextra";
+//     char *destination;
+//
+//     destination = ft_strdup(source);
+//     printf("%s\n", destination);
+//
+//     return (0);
+// }
+//
+// // cc -Wall -Werror -Wextra ft_strdup.c ft_strlen.c

@@ -13,6 +13,7 @@
 #include "libft.h"
 
 void *ft_memcpy(void *dest_str, const void *src_str, size_t bytes_to_copy)
+// void takes all data types.
 // copies the characters to another block.
 {
 	char *to_str;
@@ -34,13 +35,13 @@ void *ft_memcpy(void *dest_str, const void *src_str, size_t bytes_to_copy)
 	return(to_str);
 }
 
-int main()
-{
-	char *from = "Not today, maybe tomorrow.";
-	char *to;
-
-	to = ft_memcpy(to, from, 27);
-
-	printf("%s", to);
-	return (0);
-}
+// int main()
+// {
+// 	char *from = "Not today, maybe tomorrow.";
+// 	char to[30];
+//
+// 	ft_memcpy(to, from, 25);
+//
+// 	printf("%s\n", to);
+// 	return (0);
+// }

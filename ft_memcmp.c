@@ -14,7 +14,7 @@
 
 int ft_memcmp(const void *s1, const void *s2, size_t limit_bytes)
 {
-// compares two strings in the memory if finds a different characters,
+// compares two strings in the memory blocks if finds a different characters,
 // substracts the values of str1[i] from str2[i]
 	unsigned char *str1;
 	unsigned char *str2;

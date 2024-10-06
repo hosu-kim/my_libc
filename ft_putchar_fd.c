@@ -6,7 +6,7 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:26:28 by hoskim            #+#    #+#             */
-/*   Updated: 2024/10/05 16:08:50 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/06 10:24:17 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,13 @@ void ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+
+// int main()
+// {
+// 	char character;
+//
+// 	ft_putchar_fd('A', 1);
+// 	printf("\n");
+// 	return (0);
+// }
+//

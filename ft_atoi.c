@@ -65,3 +65,5 @@ int	ft_atoi(const char *str)
 // 	printf("%d\n",ft_atoi(str));
 // 	return (0);
 // }
+//
+// // cc -Wall -Werror -Wextra ft_atoi.c
