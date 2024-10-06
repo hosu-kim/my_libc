@@ -17,13 +17,13 @@ void    *ft_memset(void *ptr, int char_to_fill, size_t bytes_to_set)
 {
     
     char *temp_ptr;
-    size_t increase;
+    size_t index;
 
     temp_ptr = ptr;
-    increase = 0;
+    index = 0;
 
-    while(increase < bytes_to_set)
-        temp_ptr[increase++] = char_to_fill;
+    while(index < bytes_to_set)
+        temp_ptr[index++] = char_to_fill;
     return(ptr);
 }
 

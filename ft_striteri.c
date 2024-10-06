@@ -6,7 +6,7 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:14:04 by hoskim            #+#    #+#             */
-/*   Updated: 2024/10/06 14:58:34 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/06 16:33:47 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char *))
 // void to_uppercase(unsigned int index, char *c)
 // {
 // 	(void)index;
-	
+//
 //     if (*c >= 'a' && *c <= 'z')
 //     {
 //         *c = *c - 32;

@@ -17,16 +17,16 @@ void *ft_memchr(const void *s, int character, size_t limit_bytes)
 // returns the location of the character.
 {
 	const unsigned char *ptr = (const unsigned char *)s;
-	size_t increase;
+	size_t index;
 
-	increase = 0;
-	while (increase < limit_bytes)
+	index = 0;
+	while (index < limit_bytes)
 	{
-		if (ptr[increase] == (unsigned char)character)
+		if (ptr[index] == (unsigned char)character)
 		{
-			return (void *)(ptr + increase);
+			return (void *)(ptr + index);
 		}
-		increase++;
+		index++;
 	}
 	return (NULL);
 }

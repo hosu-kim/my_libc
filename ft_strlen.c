@@ -23,7 +23,6 @@ int ft_strlen(const char *s)
     return(i);
 }
 
-<<<<<<< HEAD
 // int main()
 // {
 //     char *string = "12345";
@@ -34,9 +33,3 @@ int ft_strlen(const char *s)
 // }
 //
 // // cc -Wall -Werror -Wextra ft_strlen.c
-=======
-int main()
-{
-    char *string = "I've been rim of the world"
-}
->>>>>>> ddae1764810e4192773daeac7d2b9335e833f9b7

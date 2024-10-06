@@ -33,11 +33,6 @@ size_t ft_strlcpy(char *dest, const char *src, size_t bytes_to_copy)
 	return(ft_strlen(src));
 }
 
-<<<<<<< HEAD
-=======
-// #include <stdio.h>
-//
->>>>>>> ddae1764810e4192773daeac7d2b9335e833f9b7
 // int main()
 // {
 // 	char str[] = "heelo";

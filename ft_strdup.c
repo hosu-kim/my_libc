@@ -15,10 +15,10 @@
 char *ft_strdup(const char *str)
 {
     char *dup;
-    int increase;
+    int index;
     int strlen;
 
-    increase = 0;
+    index = 0;
 
     if (!str)
     {
@@ -33,12 +33,12 @@ char *ft_strdup(const char *str)
         return (NULL);
     }
     
-    while (str[increase])
+    while (str[index])
     {
-        dup[increase] = str[increase];
-        increase++;
+        dup[index] = str[index];
+        index++;
     }
-    dup[increase] = '\0';
+    dup[index] = '\0';
     return(dup);
 }
 

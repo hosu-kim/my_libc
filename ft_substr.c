@@ -15,24 +15,24 @@
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char *substr;
-    size_t i;
-    size_t s_len;
+    size_t index;
+    size_t str_len;
 
     if (!s)
     {
         return (NULL);
     }
 
-    s_len = strlen(s);
+    str_len = ft_strlen(s);
 
-    if (start >= s_len)
+    if (start >= str_len)
     {
         return (strdup(""));
     }
 
-    if (len > s_len - start)
+    if (len > str_len - start)
     {
-        len = s_len - start;
+        len = str_len - start;
     }
 
     substr = (char *)malloc(sizeof(char) * (len + 1));
@@ -41,13 +41,24 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
         return (NULL);
     }
 
-    i = 0;
-    while (i < len && s[start + i])
+    index = 0;
+    while (index < len && s[start + index])
     {
-        substr[i] = s[start + i];
-        i++;
+        substr[index] = s[start + index];
+        index++;
     }
 
-    substr[i] = '\0';
+    substr[index] = '\0';
     return (substr);
  }
+
+// int main()
+// {
+//     char *string = "The weather channel uses data.";
+//     char *sub;
+//
+//     sub = ft_substr(string, 25, 4);
+//     printf("%s\n", sub);
+//     return (0);
+// }
+// // cc -Wall -Werror -Wextra ft_substr.c ft_strlen.c
