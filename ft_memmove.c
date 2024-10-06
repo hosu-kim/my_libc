@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-void *ft_memmove(void *dest_str, const void *src_str, size_t bytes_to_move)
+void	*ft_memmove(void *dest_str, const void *src_str, size_t bytes_to_move)
 // copies the characters to another block.
 // and protects src_str from overlapping with if conditions
-// in else, copies only non-overlapping addressses.
+// in else, copying ends before dest_str overlapps src_str.
 {
-	char *to_str;
-	const char *from_str;
-	size_t increase;
+	char		*to_str;
+	const char	*from_str;
+	size_t		increase;
 	
 	to_str = (char *)dest_str;
 	from_str = (const char *)src_str;
@@ -49,3 +49,15 @@ void *ft_memmove(void *dest_str, const void *src_str, size_t bytes_to_move)
 	}
 	return (dest_str);
 }
+
+// int	main()
+// {
+// 	char *source = "I don't you at all.";
+// 	char destination[30];
+//
+// 	ft_memmove(destination, source, 13);
+// 	printf("%s\n", destination);
+//
+// 	return (0);
+// }
+//

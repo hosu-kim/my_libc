@@ -12,47 +12,48 @@
 
 #include "libft.h"
 
-static size_t ft_wordcount(char const *s, char c)
+static size_t ft_word_counter(const char *s, char delimiter)
+// (1) skips the delimiter.
+// (2) skips to the end of a word.
 {
     size_t count;
+    count = 0;
+    
     if (!*s)
     {
         return (0);
     }
-    count = 0;
     while (*s)
     {
-        while (*s == c) // skips the delimiter.
+        while (*s == delimiter)
         {
             s++;
         }
-        if (*s) // add 1 in the count; count words
+        if (*s != delimiter)
         {
             count++;
-        }
-        while (*s && *s != c) // skips to the end of a word.
-        {
-            s++;
+            while (*s && *s != delimiter)
+            {
+                s++;
+            }
         }
     }
     return (count);
 }
 
-char **ft_split(char const *s, char c)
+char **ft_split(const char *s, char delimiter)
 {
     char **result;
-    char *start;
+    char *beginning_of_a_word;
     size_t word_length;
     size_t i;
     size_t j;
 
-    if (!s) // returns NULL if the string is NULL.
-    {
+    if (!s)
         return (NULL);
-    }
 
-    result = (char **)malloc((ft_wordcount(s, c) + 1) * sizeof(char *));
-// why + 1? to add NULL at the end of the array.
+    result = (char **)malloc((ft_word_counter(s, delimiter) + 1) * sizeof(char *));
+
     if (!result)
     {
         return (NULL);
@@ -62,22 +63,22 @@ char **ft_split(char const *s, char c)
 
     while (*s)
     {
-        while (*s == c) // skips the delimiter
+        while (*s == delimiter)
         {
             s++;
         }
-        if (*s) // if there's a word between the delimiter.
+        if (*s != delimiter)
         {
-            start = (char *)s;
+            beginning_of_a_word = (char *)s;
             word_length = 0;
 
-            while (*s && *s != c)
+            while (*s && *s != delimiter)
             {
                 word_length++;
                 s++;
             }
             result[i] = (char *)malloc((word_length + 1) * sizeof(char));
-            if (!result[i]) // allocation failure -> free the memory
+            if (!result[i])
             {
                 while (j < i)
                 {
@@ -87,10 +88,29 @@ char **ft_split(char const *s, char c)
                 free(result);
                 return (NULL);
             }
-            ft_strlcpy(result[i], start, word_length + 1); // copy words to the result.
+            ft_strlcpy(result[i], beginning_of_a_word, word_length + 1);
             i++;
         }
     }
     result[i] = NULL;
     return (result);
 }
+
+// int main()
+// {
+//     char **store;
+//     char *string = "Alpha|Bravo|Charlie";
+//     int i;
+//
+//     i = 0;
+//     store = ft_split(string, '|');
+//     while (store[i])
+//     {
+//         printf("%s\n", store[i]);
+//         i++;
+//     }
+//
+//     return (0);
+// }
+//
+// // cc -Wall -Werror -Wextra ft_split.c ft_strlcpy.c ft_strlen.c

@@ -37,14 +37,16 @@ char	*ft_itoa(int n)
 	long	num;
 
 	num = n;
+	len = get_num_length(n);
 	result_str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result_str)
 		return (NULL);
-	len = get_num_length(n);
 	result_str[len] = '\0';
 	if (n < 0)
+	{
 		num = -num;
 		result_str[0] = '-';
+	}
 	while (0 <= --len && result_str[len] != '-')
 	{
 		result_str[len] = (num % 10) + 48;

@@ -18,12 +18,25 @@ void	ft_bzero(void *s, size_t n)
 // Because void can't be modified.
 {
 	char	*ptr;
-	size_t	i;
 
 	ptr = s;
-	i = 0;
 	while (0 < n)
 	{
 		ptr[--n] = 0;
 	}
 }
+
+// int main()
+// {
+//     char string[20] = "Today is Sunday.\n";
+//
+//     printf("Before: \n");
+//     printf("%s\n", string);
+//
+//     ft_bzero(string, 5);
+//
+//     printf("After: \n");
+// 	printf("%s\n", string);
+// 	return (0);
+// }
+// // cc -Wall -Werror -Wextra ft_bzero.c

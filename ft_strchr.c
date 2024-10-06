@@ -12,9 +12,13 @@
 
 #include "libft.h"
 
-char *strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
+// finds the provided char in the string
 {
-	char ch = (char)c;
+	char ch;
+	
+	ch = (char)c;
+
 
 	while(*s != '\0')
 	{
@@ -30,3 +34,14 @@ char *strchr(const char *s, int c)
 	}
 	return(NULL);
 }
+
+// int main ()
+// {
+// 	char *string = "Press here to open.";
+
+// 	printf("%s\n", ft_strchr(string, 'o'));
+
+// 	return (0);
+// }
+// 
+// // cc -Wall -Werror -Wextra ft_strchr.c

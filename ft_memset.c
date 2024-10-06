@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void *ft_memset(void *ptr, int number_to_fill, size_t bytes_to_set)
+void    *ft_memset(void *ptr, int char_to_fill, size_t bytes_to_set)
 // sets memory blocks to the provided number; similar with bzero.
 {
     
@@ -23,6 +23,17 @@ void *ft_memset(void *ptr, int number_to_fill, size_t bytes_to_set)
     increase = 0;
 
     while(increase < bytes_to_set)
-        temp_ptr[increase++] = number_to_fill;
+        temp_ptr[increase++] = char_to_fill;
     return(ptr);
 }
+
+// int main()
+// {
+//     char target[30];
+//
+//    ft_memset(target, 'A', 4);
+//    printf("%s\n", target);
+//
+//    return (0);
+// }
+//

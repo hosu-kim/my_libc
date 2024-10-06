@@ -6,13 +6,14 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:37:24 by hoskim            #+#    #+#             */
-/*   Updated: 2024/09/28 16:42:44 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/06 11:31:47 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void ft_putstr_fd(char *s, int fd)
+// prints the provided string.
 {
 	unsigned int i;
 
@@ -28,3 +29,13 @@ void ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
+
+// int main()
+// {
+// 	char	*string = "I'm a string.\n";
+// 	ft_putstr_fd(string, 1);
+//
+// 	return (0);
+// }
+//
+// // cc -Wall -Werror -Wextra ft_putstr_fd.c
