@@ -19,21 +19,26 @@ void	*ft_memmove(void *dest_str, const void *src_str, size_t bytes_to_move)
 {
 	char		*to_str;
 	const char	*from_str;
-	size_t		index;
 
+	if (bytes_to_move == 0 || dest_str == src_str)
+		return (dest_str);
 	to_str = (char *)dest_str;
 	from_str = (const char *)src_str;
-	index = 0;
 	if (to_str < from_str)
 	{
-		while (index++ < bytes_to_move)
-			to_str[index] = from_str[index];
+		while (bytes_to_move--)
+		{
+			*to_str++ = *from_str++;
+		}
 	}
 	else
 	{
-		index = bytes_to_move;
-		while (index-- > 0)
-			to_str[index - 1] = from_str[index - 1];
+		to_str += bytes_to_move;
+		from_str += bytes_to_move;
+		while (bytes_to_move--)
+		{
+			*(--to_str) = *(--from_str);
+		}
 	}
 	return (dest_str);
 }

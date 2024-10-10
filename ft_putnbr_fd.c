@@ -6,7 +6,7 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:58:34 by hoskim            #+#    #+#             */
-/*   Updated: 2024/10/09 11:44:04 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/10 20:01:50 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,23 @@
 void	ft_putnbr_fd(int n, int fd)
 // prints a number in the terminal.
 {
-	char	*itoa;
-
-	itoa = ft_itoa(n);
-	if (itoa == NULL)
+	if (n < 0)
 	{
-		return ;
+		ft_putchar_fd('-', fd);
+		n *= -1;
 	}
-	while (*itoa)
+	if (n == -2147483648)
 	{
-		write(fd, itoa, 1);
-		itoa++;
+		ft_putchar_fd('2', fd);
+		n = -(n % 1000000000);
 	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }
 
 // int main()

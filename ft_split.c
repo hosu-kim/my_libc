@@ -95,7 +95,6 @@ char	**split_and_allocate(char **result, const char *s, char delimiter)
 char	**ft_split(const char *s, char delimiter)
 {
 	char	**result;
-	size_t	i;
 
 	if (!s)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 19:54:31 by hoskim            #+#    #+#             */
-/*   Updated: 2024/10/08 10:47:04 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/10 18:27:32 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	last;
-
 	if (!lst)
 	{
 		return (lst);

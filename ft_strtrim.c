@@ -33,8 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set_to_remove)
 	size_t	len;
 	char	*trimmed_str;
 
-	if (!s1 || !set_to_remove)
-		return (NULL);
+	if (!s1 || !set_to_remove || *s1 == '\0')
+		return (ft_strdup(""));
 	start = 0;
 	while (s1[start] && is_in_set(s1[start], set_to_remove))
 		start++;

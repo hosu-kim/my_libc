@@ -16,15 +16,8 @@ int	ft_is_space(char c)
 // finds spaces
 // \n: new line, \t: tab, \r: return, \v: vertical tab, \f: form feed
 {
-	if (c == '\n' || c == '\t' || c || '\r' || \
-		c == '\v' || c == '\f' || c == ' ')
-	{
-		return (0);
-	}
-	else
-	{
-		return (1);
-	}
+	return (c == '\n' || c == '\t' || c == '\r' || \
+			c == '\v' || c == '\f' || c == ' ');
 }
 
 int	ft_atoi(const char *str)
@@ -37,10 +30,8 @@ int	ft_atoi(const char *str)
 
 	result = 0;
 	sign = 1;
-	while (*str == ' ')
-	{
+	while (ft_is_space(*str))
 		str++;
-	}
 	if (*str == '-')
 	{
 		sign = -1;
