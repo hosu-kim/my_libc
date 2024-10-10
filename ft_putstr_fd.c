@@ -6,22 +6,21 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:37:24 by hoskim            #+#    #+#             */
-/*   Updated: 2024/10/06 11:31:47 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/09 11:45:08 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
-// prints the provided string.
+void	ft_putstr_fd(char *s, int fd)
+// prints the provided string one char by one char
 {
-	unsigned int i;
+	unsigned int	i;
 
-	if(s == NULL || fd < 0)
+	if (s == NULL || fd < 0)
 	{
-		return;
+		return ;
 	}
-
 	i = 0;
 	while (s[i] != '\0')
 	{

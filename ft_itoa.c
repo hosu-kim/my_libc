@@ -29,7 +29,8 @@ static int	get_num_length(int n) // gets the length of a provided number.
 
 char	*ft_itoa(int n)
 // converts degits in integer to string
-// (1) if negative, removes minus sign and assign '-' to the first element of result_str.
+// (1) if negative, 
+//     removes minus sign and assign '-' to the first element of result_str.
 // (2) assigns each number in ascii code to result_str
 {
 	char	*result_str;

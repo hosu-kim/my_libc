@@ -6,13 +6,13 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 19:48:03 by hoskim            #+#    #+#             */
-/*   Updated: 2024/10/06 19:54:15 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/08 10:51:11 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	len;
 

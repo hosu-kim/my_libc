@@ -18,10 +18,11 @@ int	ft_isprint(int c)
 {
 	if (32 <= c && c <= 126)
 		return (1);
-	return(0);
+	return (0);
 }
 
-// printable characters: all num and alphabets and special characer in ascii code.
+// printable characters: 
+// all num and alphabets and special characer in ascii.
 //
 // int main()
 // {

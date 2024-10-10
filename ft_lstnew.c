@@ -6,13 +6,13 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 18:45:53 by hoskim            #+#    #+#             */
-/*   Updated: 2024/10/06 19:10:35 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/08 10:51:01 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 // ->: to access a member of a structure.
 {
 	t_list	*lst;

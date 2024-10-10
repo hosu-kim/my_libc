@@ -6,16 +6,16 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 20:18:46 by hoskim            #+#    #+#             */
-/*   Updated: 2024/10/06 20:23:12 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/08 10:50:40 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *result;
-	t_list *t;
+	t_list	*result;
+	t_list	*t;
 
 	if (lst == 0 || f || 0)
 		return (NULL);

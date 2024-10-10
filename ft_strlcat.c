@@ -12,17 +12,16 @@
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dest, const char *src, size_t total_dest_size)
+size_t	ft_strlcat(char *dest, const char *src, size_t total_dest_size)
 // concatenates scr to dest and then returns the total length of dest;
 {
-	size_t dest_len;
-	size_t src_len;
-	size_t i;
-	
+	size_t	dest_len;
+	size_t	src_len;
+	size_t	i;
+
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
 	i = 0;
-	
 	if (total_dest_size == 0)
 	{
 		return (src_len);

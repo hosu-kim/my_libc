@@ -12,18 +12,17 @@
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t limit_bytes)
-{
+int	ft_memcmp(const void *s1, const void *s2, size_t limit_bytes)
 // compares two strings in the memory blocks if finds a different characters,
 // substracts the values of str1[i] from str2[i]
-	unsigned char *str1;
-	unsigned char *str2;
-	size_t i;
+{
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
 
 	str1 = (const unsigned char *)s1;
-	str2 = (const unsigned char *)s2;  
+	str2 = (const unsigned char *)s2;
 	i = 0;
-
 	while (i < limit_bytes)
 	{
 		if (str1[i] != str2[i])
@@ -32,7 +31,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t limit_bytes)
 		}
 		i++;
 	}
-	return(0);
+	return (0);
 }
 
 // int main()

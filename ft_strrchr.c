@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 // finds the last occurence of the char in s.
 // and return the address of the same char as c
 {
-	char ch = (char)c;
-	const char *last_occur;
+	char		ch;
+	const char	*last_occur;
 
+	ch = (char)c;
 	last_occur = NULL;
-
-	while(*s != '\0')
+	while (*s != '\0')
 	{
 		if (*s == ch)
 		{

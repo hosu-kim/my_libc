@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dest, const char *src, size_t bytes_to_copy)
+size_t	ft_strlcpy(char *dest, const char *src, size_t bytes_to_copy)
 // copies src to dest according to the provided bytes_to_copy
 // and returns the length of the source.
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = 0;
 	if (bytes_to_copy == 0)
 	{
-		return(ft_strlen(src));
+		return (ft_strlen(src));
 	}
 	while (i < bytes_to_copy - 1 && src[i] != '\0')
 	{
@@ -29,8 +29,7 @@ size_t ft_strlcpy(char *dest, const char *src, size_t bytes_to_copy)
 		i++;
 	}
 	dest[i] = '\0';
-	
-	return(ft_strlen(src));
+	return (ft_strlen(src));
 }
 
 // int main()

@@ -12,88 +12,103 @@
 
 #include "libft.h"
 
-static size_t ft_word_counter(const char *s, char delimiter)
+static size_t	ft_word_counter(const char *s, char delimiter)
 // (1) skips the delimiter.
 // (2) skips to the end of a word.
 {
-    size_t count;
-    count = 0;
-    
-    if (!*s)
-    {
-        return (0);
-    }
-    while (*s)
-    {
-        while (*s == delimiter)
-        {
-            s++;
-        }
-        if (*s != delimiter)
-        {
-            count++;
-            while (*s && *s != delimiter)
-            {
-                s++;
-            }
-        }
-    }
-    return (count);
+	size_t	count;
+
+	count = 0;
+	if (!*s)
+	{
+		return (0);
+	}
+	while (*s)
+	{
+		while (*s == delimiter)
+		{
+			s++;
+		}
+		if (*s != delimiter)
+		{
+			count++;
+			while (*s && *s != delimiter)
+			{
+				s++;
+			}
+		}
+	}
+	return (count);
 }
 
-char **ft_split(const char *s, char delimiter)
+void	free_memory(char **result, size_t i)
 {
-    char **result;
-    char *beginning_of_a_word;
-    size_t word_length;
-    size_t i;
-    size_t j;
+	size_t	j;
 
-    if (!s)
-        return (NULL);
+	j = 0;
+	while (j < i)
+	{
+		free(result[j]);
+		j++;
+	}
+	free(result);
+}
 
-    result = (char **)malloc((ft_word_counter(s, delimiter) + 1) * sizeof(char *));
+char	*allocate_word(const char *s, char delimiter)
+{
+	const char	*beginning_of_a_word;
+	size_t		word_len;
 
-    if (!result)
-    {
-        return (NULL);
-    }
+	beginning_of_a_word = s;
+	word_len = 0;
+	while (*s && *s != delimiter)
+	{
+		word_len++;
+		s++;
+	}
+	return (ft_substr(beginning_of_a_word, 0, word_len));
+}
 
-    i = 0;
+char	**split_and_allocate(char **result, const char *s, char delimiter)
+{
+	size_t	i;
 
-    while (*s)
-    {
-        while (*s == delimiter)
-        {
-            s++;
-        }
-        if (*s != delimiter)
-        {
-            beginning_of_a_word = (char *)s;
-            word_length = 0;
+	i = 0;
+	while (*s)
+	{
+		while (*s == delimiter)
+			s++;
+		if (*s)
+		{
+			result[i] = allocate_word(s, delimiter);
+			if (!result[i])
+				return (NULL);
+			i++;
+			while (*s && *s != delimiter)
+				s++;
+		}
+	}
+	result[i] = NULL;
+	return (result);
+}
 
-            while (*s && *s != delimiter)
-            {
-                word_length++;
-                s++;
-            }
-            result[i] = (char *)malloc((word_length + 1) * sizeof(char));
-            if (!result[i])
-            {
-                while (j < i)
-                {
-                    free(result[j]);
-                    j++;
-                }
-                free(result);
-                return (NULL);
-            }
-            ft_strlcpy(result[i], beginning_of_a_word, word_length + 1);
-            i++;
-        }
-    }
-    result[i] = NULL;
-    return (result);
+char	**ft_split(const char *s, char delimiter)
+{
+	char	**result;
+	size_t	i;
+
+	if (!s)
+		return (NULL);
+	result = (char **)malloc((ft_word_counter(s, delimiter) + 1) * \
+	sizeof(char *));
+	if (!result)
+		return (NULL);
+	if (!split_and_allocate(result, s, delimiter))
+	{
+		free_memory(result, ft_word_counter(s, delimiter));
+		return (NULL);
+	}
+	return (result);
 }
 
 // int main()

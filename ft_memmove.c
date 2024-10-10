@@ -20,32 +20,20 @@ void	*ft_memmove(void *dest_str, const void *src_str, size_t bytes_to_move)
 	char		*to_str;
 	const char	*from_str;
 	size_t		index;
-	
+
 	to_str = (char *)dest_str;
 	from_str = (const char *)src_str;
 	index = 0;
-	
-	if (to_str == from_str) 
-	{
-		return(to_str);
-	}
-
 	if (to_str < from_str)
 	{
-		while (index < bytes_to_move)
-		{
+		while (index++ < bytes_to_move)
 			to_str[index] = from_str[index];
-			index++;
-		}
 	}
 	else
 	{
 		index = bytes_to_move;
-		while (index > 0)
-		{
+		while (index-- > 0)
 			to_str[index - 1] = from_str[index - 1];
-			index--;
-		}
 	}
 	return (dest_str);
 }
