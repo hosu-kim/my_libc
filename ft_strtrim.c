@@ -45,13 +45,8 @@ char	*ft_strtrim(char const *s1, char const *set_to_remove)
 	trimmed_str = (char *)malloc(len + 1);
 	if (!trimmed_str)
 		return (NULL);
-	if (len == 0)
-		trimmed_str = '\0';
-	else
-	{
-		strncpy(trimmed_str, s1 + start, len);
-		trimmed_str[len] = '\0';
-	}
+	strncpy(trimmed_str, s1 + start, len);
+	trimmed_str[len] = '\0';
 	return (trimmed_str);
 }
 

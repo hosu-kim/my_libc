@@ -6,7 +6,7 @@
 #    By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/06 20:27:35 by hoskim            #+#    #+#              #
-#    Updated: 2024/10/10 18:17:59 by hoskim           ###   ########.fr        #
+#    Updated: 2024/10/10 21:24:34 by hoskim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ SRCS			= ft_memset.c ft_bzero.c ft_memcpy.c \
 					ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 					ft_toupper.c ft_tolower.c ft_calloc.c ft_strdup.c \
 					ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
-					ft_itoa.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c \
-					ft_putendl_fd.c ft_putnbr_fd.c
+					ft_itoa.c ft_striteri.c ft_strmapi.c ft_putchar_fd.c \
+					ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
 OBJS			= $(SRCS:.c=.o)
 

@@ -18,6 +18,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	s1_len;
 	size_t	s2_len;
 	size_t	total_len;
+	size_t i;
+	size_t j;
 
 	if (!s1 || !s2)
 	{
@@ -31,8 +33,15 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	{
 		return (NULL);
 	}
-	strcpy(new_str, s1);
-	strcat(new_str, s2);
+	i = 0;
+	while (i < s1_len)
+	{
+		new_str = s1[i];
+		i++;
+	}
+	while (j < s2_len)
+		new_str[i++] = s2[j++];
+	new_str[i] = '\0';
 	return (new_str);
 }
 
