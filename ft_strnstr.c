@@ -21,9 +21,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t up_to)
 	size_t	big_index;
 	size_t	little_index;
 
-	big_index = 0;
 	if (*little == '\0')
 		return ((char *)big);
+	big_index = 0;
 	while (big_index < up_to && big[big_index] != '\0')
 	{
 		if (big[big_index] == little[0])

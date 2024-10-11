@@ -12,10 +12,12 @@
 
 #include "libft.h"
 
-char	*ft_substr(char const *src_str, unsigned int extract_start, size_t len_of_extract)
+char	*ft_substr(char const *src_str, unsigned int extract_start, \
+					size_t len_of_extract)
 // extracts a substring from a string.
 // if (len_of_extract > src_len - extract_start)
-// : if the requested length exceeds the remaining characters of the source str, 
+// : if the requested length exceeds the remaining characters
+// of the source str, 
 // len_of_extract is only set up to the end of src_str
 {
 	char	*extract;
@@ -26,14 +28,14 @@ char	*ft_substr(char const *src_str, unsigned int extract_start, size_t len_of_e
 		return (NULL);
 	src_len = ft_strlen(src_str);
 	if (src_len <= extract_start)
-		return (strdup(""));
+		return (ft_strdup(""));
 	if (len_of_extract > src_len - extract_start)
 		len_of_extract = src_len - extract_start;
 	extract = (char *)malloc(sizeof(char) * (len_of_extract + 1));
 	if (!extract)
 		return (NULL);
 	index = 0;
-	while (index < len_of_extract && src_str[extract_start + index])
+	while (index < len_of_extract && src_str[extract_start] + index)
 	{
 		extract[index] = src_str[extract_start + index];
 		index++;
