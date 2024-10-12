@@ -6,7 +6,7 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:46:35 by hoskim            #+#    #+#             */
-/*   Updated: 2024/10/09 11:40:52 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/12 16:58:50 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,7 @@ void	ft_putendl_fd(char *s, int fd)
 // (1) checks if the parameters are vaild
 // (2) iterates writing chars one by one.
 {
-	if (s == NULL || fd < 0)
-	{
-		return ;
-	}
-	while (*s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }
 

@@ -15,29 +15,21 @@
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*new_str;
-	size_t	s1_len;
-	size_t	s2_len;
-	size_t	total_len;
 	size_t	i;
-	size_t	j;
 
 	if (!s1 || !s2)
 		return (NULL);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	total_len = s1_len + s2_len;
-	new_str = (char *)malloc(sizeof(char) * (total_len + 1));
+	new_str = (char *)malloc(sizeof(char) * \
+	(ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!new_str)
 		return (NULL);
 	i = 0;
-	while (i < s1_len)
+	while (*s1)
 	{
-		new_str[i] = s1[i];
-		i++;
+		new_str[i++] = *s1++;
 	}
-	j = 0;
-	while (j < s2_len)
-		new_str[i++] = s2[j++];
+	while (*s2)
+		new_str[i++] = *s2++;
 	new_str[i] = '\0';
 	return (new_str);
 }

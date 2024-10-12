@@ -28,26 +28,27 @@ static int	is_in_set(char c, const char *set)
 
 char	*ft_strtrim(char const *s1, char const *set_to_remove)
 {
-	size_t	start;
-	size_t	end;
-	size_t	len;
-	char	*trimmed_str;
+	char	*trimmed;
+	int		start;
+	int		end;
+	int		index;
 
-	if (!s1 || !set_to_remove || *s1 == '\0')
-		return (ft_strdup(""));
+	index = 0;
 	start = 0;
+	if (s1 == 0 || set_to_remove == 0)
+		return (NULL);
+	end = ft_strlen(s1);
 	while (s1[start] && is_in_set(s1[start], set_to_remove))
 		start++;
-	end = ft_strlen(s1);
 	while (end > start && is_in_set(s1[end - 1], set_to_remove))
 		end--;
-	len = end - start;
-	trimmed_str = (char *)malloc(len + 1);
-	if (!trimmed_str)
+	trimmed = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (!trimmed)
 		return (NULL);
-	strncpy(trimmed_str, s1 + start, len);
-	trimmed_str[len] = '\0';
-	return (trimmed_str);
+	while (start < end)
+		trimmed[index++] = s1[start++];
+	trimmed[index] = '\0';
+	return (trimmed);
 }
 
 // int  main()

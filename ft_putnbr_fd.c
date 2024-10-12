@@ -6,7 +6,7 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:58:34 by hoskim            #+#    #+#             */
-/*   Updated: 2024/10/10 20:01:50 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/12 17:09:00 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 	else
+	{
 		ft_putchar_fd(n + '0', fd);
+	}
 }
-
 // int main()
 // {
 // 	int a_number;
