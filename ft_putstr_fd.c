@@ -6,7 +6,7 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:37:24 by hoskim            #+#    #+#             */
-/*   Updated: 2024/10/09 11:45:08 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/12 16:58:15 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,9 @@
 void	ft_putstr_fd(char *s, int fd)
 // prints the provided string one char by one char
 {
-	unsigned int	i;
-
-	if (s == NULL || fd < 0)
-	{
+	if (!s)
 		return ;
-	}
-	i = 0;
-	while (s[i] != '\0')
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	write(fd, s, ft_strlen(s));
 }
 
 // int main()

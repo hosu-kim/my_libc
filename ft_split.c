@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	word_counter(const char *s, char delimiter)
+size_t	ft_word_counter(const char *s, char delimiter)
 // (1) skips the delimiter.
 // (2) add one to word_count.
 // (3) skips to the end of a word.
@@ -25,35 +25,18 @@ static size_t	word_counter(const char *s, char delimiter)
 	while (*s)
 	{
 		while (*s == delimiter)
-		{
 			s++;
-		}
-		if (*s != delimiter)
+		if (*s != delimiter && *s != '\0')
 		{
 			word_count++;
 			while (*s && *s != delimiter)
-			{
 				s++;
-			}
 		}
 	}
 	return (word_count);
 }
 
-void	memory_cleaner(char **result, size_t i)
-{
-	size_t	cleaning_index;
-
-	cleaning_index = 0;
-	while (cleaning_index < i)
-	{
-		free(result[cleaning_index]);
-		cleaning_index++;
-	}
-	free(result);
-}
-
-char	*allocate_word(const char *s, char delimiter)
+char	*ft_word_injector(const char *s, char delimiter)
 {
 	const char	*beginning_of_a_word;
 	size_t		word_len;
@@ -68,29 +51,36 @@ char	*allocate_word(const char *s, char delimiter)
 	return (ft_substr(beginning_of_a_word, 0, word_len));
 }
 
+void	ft_memory_cleaner(char **result, size_t word_index)
+{
+	while (word_index > 0)
+		free(result[--word_index]);
+	free(result);
+}
+
 char	**ft_split_and_allocate(char **result, const char *s, char delimiter)
 {
-	size_t	i;
+	size_t	index;
 
-	i = 0;
+	index = 0;
 	while (*s)
 	{
 		while (*s == delimiter)
 			s++;
 		if (*s)
 		{
-			result[i] = allocate_word(s, delimiter);
-			if (!result[i])
+			result[index] = ft_word_injector(s, delimiter);
+			if (!result[index])
 			{
-				memory_cleaner(result, i);
+				ft_memory_cleaner(result, index);
 				return (NULL);
 			}
-			i++;
+			index++;
 			while (*s && *s != delimiter)
 				s++;
 		}
 	}
-	result[i] = NULL;
+	result[index] = NULL;
 	return (result);
 }
 
@@ -101,21 +91,13 @@ char	**ft_split(const char *s, char delimiter)
 
 	if (!s)
 		return (NULL);
-	word_count = word_counter(s, delimiter);
-	if (word_count == 0)
-	{
-		result = (char **)malloc(sizeof(char *));
-		if (!result)
-			return (NULL);
-		result[0] = NULL;
-		return (result);
-	}
+	word_count = ft_word_counter(s, delimiter);
 	result = (char **)malloc((word_count + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
 	if (!ft_split_and_allocate(result, s, delimiter))
 	{
-		memory_cleaner(result, word_count);
+		free(result);
 		return (NULL);
 	}
 	return (result);

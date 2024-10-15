@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	get_num_length(int n) // gets the length of a provided number.
+static int	ft_get_num_length(int n) // gets the length of a provided number.
 {
 	int	len;
 
