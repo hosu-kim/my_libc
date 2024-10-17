@@ -97,7 +97,6 @@ char	**ft_split(const char *s, char delimiter)
 		return (NULL);
 	if (!ft_split_and_allocate(result, s, delimiter))
 	{
-		free(result);
 		return (NULL);
 	}
 	return (result);
