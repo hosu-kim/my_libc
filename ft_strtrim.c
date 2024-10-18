@@ -6,13 +6,13 @@
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 23:59:42 by hoskim            #+#    #+#             */
-/*   Updated: 2024/09/24 23:59:42 by hoskim           ###   ########.fr       */
+/*   Updated: 2024/10/18 18:21:44 by hoskim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_in_set(char c, const char *set)
+static int	ft_is_in_set(char c, const char *set)
 // True: 1, False: 0
 {
 	while (*set)
