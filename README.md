@@ -1,8 +1,8 @@
 # my_libc
 ## Overview
-`my_libc` is a personal library written in the C programming language. This library provides a variety of useful functions that can be reused when writing C programs.
+`libft` is a personal library written in the C programming language. This library provides a variety of useful functions that can be reused when writing C programs.
 ## File Structure
-`my_libc.h`: The header file of the library, containing all function and struct declarations.
+`libft.h`: The header file of the library, containing all function and struct declarations.
 `libft.a`: The compiled library file.
 Various source files (`*.c`): Contains the implementation of each function.
 ##  Usage
@@ -13,7 +13,7 @@ make
 ```
 This command will create the `libft.a` file
 ### 2. Using the Library in Your Project
-To use the `my_libc` library in your project, compile it as follows:
+To use the `libft` library in your project, compile it as follows:
 ```bash
 gcc -Wall -Wextra -Werror -L. -lft your_program.c -o your_program
 ```
