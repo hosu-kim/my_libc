@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   my_libc.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hoskim <hoskim@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H // if not defined: to prevent header duplication(complie error)
-# define LIBFT_H // header define
+#ifndef MY_LIBC_H // if not defined: to prevent header duplication(complie error)
+# define MY_LIBC_H // header define
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
